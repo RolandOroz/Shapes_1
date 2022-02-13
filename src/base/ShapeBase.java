@@ -16,6 +16,7 @@ public class ShapeBase implements ShapeInterface {
     }
 
     public String getName() {
+
         return name;
     }
 
@@ -24,6 +25,7 @@ public class ShapeBase implements ShapeInterface {
     }
 
     public double getWidth() {
+
         return width;
     }
 
@@ -32,6 +34,7 @@ public class ShapeBase implements ShapeInterface {
     }
 
     public double getHeight() {
+
         return height;
     }
 
@@ -41,25 +44,28 @@ public class ShapeBase implements ShapeInterface {
 
     @Override
     public double calculateArea() {
+
         return 0;
     }
 
     @Override
     public double calculatePerimeter() {
+
         return 0;
     }
 
     @Override
     public boolean checkShape() {
+
         return false;
     }
 
     @Override
-    public boolean compareShape() {
-        return false;
+    public void compareShapeIfEqual() {
     }
 
-    public boolean compareShape(String name, double width, double height) {
+    public boolean compareShapeIfEqual(String name, double width, double height) {
+
         return false;
     }
 }

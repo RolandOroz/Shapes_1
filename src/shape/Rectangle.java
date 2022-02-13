@@ -27,7 +27,7 @@ public class Rectangle extends ShapeBase {
     }
 
     @Override
-    public boolean compareShape(String name, double width, double height) {
+    public boolean compareShapeIfEqual(String name, double width, double height) {
 
         Rectangle r2 = new Rectangle(name, width, height);
         return this.calculateArea() == r2.calculateArea()

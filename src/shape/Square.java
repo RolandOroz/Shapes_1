@@ -29,8 +29,11 @@ public class Square extends ShapeBase {
     }
 
     @Override
-    public boolean compareShape() {
-        return false;
-    }
+    public boolean compareShapeIfEqual(String name, double width, double height) {
 
+        Square r2 = new Square(name, width, height);
+        return this.calculateArea() == r2.calculateArea()
+                && this.calculatePerimeter() == r2.calculatePerimeter()
+                && r2.checkShape();
+    }
 }

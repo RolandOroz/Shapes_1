@@ -20,8 +20,9 @@ public class ShapeDisplay {
                 + "\n" + base.getClass()
                 + " is correct Shape: "
                 + base.checkShape()
-                + "\n"
-                + base.compareShape("ss", 10, 20)
+                + "\nShape is Equal: "
+                //comparing If Rectangle is equal
+                + base.compareShapeIfEqual("ss", 10, 20)
                 + "\n");
     }
 
@@ -37,18 +38,27 @@ public class ShapeDisplay {
 
         for(int i = 0; i < shapes.length; i++) {
             displayArea(shapes[i]);
-            shapes[i].checkShape();
-            shapes[i].compareShape();
         }
 
 
         ShapeBase rect1 = new Rectangle("Rect_A", 10, 20);
-        ShapeBase rect2 = new Rectangle("Rect_A", 30, 40);
+        ShapeBase rect2 = new Rectangle("Rect_B", 30, 40);
 
         CompareShape comp1 = new CompareShape(rect1, rect2);
         comp1.printShapeCompares();
 
         CompareShape comp2 = new CompareShape(shapes[1], shapes[2]);
         comp2.printShapeCompares();
+
+
+        System.out.println("\nIs "
+                + rect1.getName()
+                + " compared to "
+                + rect2.getName()
+                + " equal? "
+                + rect1.compareShapeIfEqual(rect2.getName(),
+                rect2.getWidth(),
+                rect2.getHeight()));
+
     }
 }
