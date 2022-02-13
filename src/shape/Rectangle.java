@@ -17,4 +17,11 @@ public class Rectangle extends ShapeBase {
     public double calculatePerimeter() {
         return 2 * (width + height);
     }
+
+    @Override
+    public boolean checkShape() {
+        return height != width;
+    }
+
 }
+

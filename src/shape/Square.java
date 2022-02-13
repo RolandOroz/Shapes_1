@@ -6,7 +6,7 @@ public class Square extends ShapeBase {
 
     public Square(String name, double width, double height) {
         super(name, width, height);
-        this.height = width;
+
     }
 
     @Override
@@ -18,4 +18,10 @@ public class Square extends ShapeBase {
     public double calculatePerimeter() {
         return 4 *  width;
     }
+
+    @Override
+    public boolean checkShape() {
+        return height == width;
+    }
+
 }

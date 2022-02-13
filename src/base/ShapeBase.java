@@ -46,4 +46,10 @@ public class ShapeBase implements ShapeInterface {
     public double calculatePerimeter() {
         return 0;
     }
+
+    @Override
+    public boolean checkShape() {
+        return false;
+    }
+
 }
