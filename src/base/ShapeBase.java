@@ -1,5 +1,7 @@
 package base;
 
+
+
 public class ShapeBase implements ShapeInterface {
 
     protected String name;
@@ -53,8 +55,11 @@ public class ShapeBase implements ShapeInterface {
     }
 
     @Override
-    public double compareShape() {
-        return 0;
+    public boolean compareShape() {
+        return false;
     }
 
+    public boolean compareShape(String name, double width, double height) {
+        return false;
+    }
 }

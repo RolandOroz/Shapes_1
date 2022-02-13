@@ -29,8 +29,8 @@ public class Square extends ShapeBase {
     }
 
     @Override
-    public double compareShape() {
-        return 0;
+    public boolean compareShape() {
+        return false;
     }
 
 }

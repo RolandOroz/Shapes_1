@@ -27,9 +27,12 @@ public class Rectangle extends ShapeBase {
     }
 
     @Override
-    public double compareShape() {
+    public boolean compareShape(String name, double width, double height) {
 
-        return 0;
+        Rectangle r2 = new Rectangle(name, width, height);
+        return this.calculateArea() == r2.calculateArea()
+                && this.calculatePerimeter() == r2.calculatePerimeter()
+                && r2.checkShape();
     }
 }
 
