@@ -11,17 +11,19 @@ public class Square extends ShapeBase {
 
     @Override
     public double calculateArea() {
-        return width * width;
+        return width * height;
     }
 
     @Override
     public double calculatePerimeter() {
-        return 4 *  width;
+        return 2 * (width + height);
     }
 
     @Override
     public boolean checkShape() {
-        return height == width;
+        return height == width
+                && 4 * height % calculatePerimeter() == 0
+                && 4 * width % calculatePerimeter() == 0;
     }
 
 }

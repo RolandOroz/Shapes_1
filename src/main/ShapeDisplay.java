@@ -15,7 +15,8 @@ public class ShapeDisplay {
                                      + base.calculateArea()
                                      + "\nPerimeter: "
                                      + base.calculatePerimeter()
-                                     + "\nIs correct Shape: "
+                                     + "\n" + base.getClass()
+                                     + " is correct Shape: "
                                      + base.checkShape()
                                      + "\n");
     }
