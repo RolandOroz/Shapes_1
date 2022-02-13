@@ -23,7 +23,14 @@ public class Square extends ShapeBase {
     public boolean checkShape() {
         return height == width
                 && 4 * height % calculatePerimeter() == 0
-                && 4 * width % calculatePerimeter() == 0;
+                && 4 * width % calculatePerimeter() == 0
+                && height != 0
+                && width != 0;
+    }
+
+    @Override
+    public double compareShape() {
+        return 0;
     }
 
 }

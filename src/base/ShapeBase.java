@@ -52,4 +52,9 @@ public class ShapeBase implements ShapeInterface {
         return false;
     }
 
+    @Override
+    public double compareShape() {
+        return 0;
+    }
+
 }

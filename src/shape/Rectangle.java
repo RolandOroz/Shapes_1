@@ -21,8 +21,14 @@ public class Rectangle extends ShapeBase {
     @Override
     public boolean checkShape() {
         return height != width
-                && calculatePerimeter() == 2 * (width + height);
+                && calculatePerimeter() == 2 * (width + height)
+                && height != 0
+                && width != 0;
     }
 
+    @Override
+    public double compareShape() {
+        return 0;
+    }
 }
 

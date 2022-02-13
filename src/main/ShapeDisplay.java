@@ -27,7 +27,7 @@ public class ShapeDisplay {
         //not a correct Rectangle
         shapes[0] = new Rectangle("Rectangle_1", 20, 20);
         shapes[1] = new Square("Square_1", 5, 5);
-        shapes[2] = new Rectangle("Rectangle_2", 12,17);
+        shapes[2] = new Rectangle("Rectangle_2", 10,17);
         //not a correct Square
         shapes[3] = new Square("Square_2", 9,8);
 
