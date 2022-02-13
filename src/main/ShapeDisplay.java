@@ -1,6 +1,7 @@
 package main;
 
 import base.ShapeBase;
+import comparer.CompareShape;
 import shape.Rectangle;
 import shape.Square;
 
@@ -36,5 +37,14 @@ public class ShapeDisplay {
             shapes[i].checkShape();
         }
 
+
+        ShapeBase rect1 = new Rectangle("Rect_A", 10, 20);
+        ShapeBase rect2 = new Rectangle("Rect_A", 30, 40);
+
+        CompareShape comp1 = new CompareShape(rect1, rect2);
+        comp1.printShapeCompares();
+
+        CompareShape comp2 = new CompareShape(shapes[1], shapes[2]);
+        comp2.printShapeCompares();
     }
 }

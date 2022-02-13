@@ -28,6 +28,7 @@ public class Rectangle extends ShapeBase {
 
     @Override
     public double compareShape() {
+
         return 0;
     }
 }
