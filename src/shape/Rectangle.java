@@ -4,8 +4,8 @@ import base.ShapeBase;
 
 public class Rectangle extends ShapeBase {
 
-    public Rectangle(String name, double width, double height) {
-        super(name, width, height);
+    public Rectangle(String name, int x, int y, double width, double height) {
+        super(name, x, y, width, height);
     }
 
     @Override
@@ -26,13 +26,11 @@ public class Rectangle extends ShapeBase {
                 && width != 0;
     }
 
-    @Override
-    public boolean compareShapeIfEqual(String name, double width, double height) {
+    public boolean compareShapeIfEqual(Rectangle r2) {
 
-        Rectangle r2 = new Rectangle(name, width, height);
         return this.calculateArea() == r2.calculateArea()
-                && this.calculatePerimeter() == r2.calculatePerimeter()
-                && r2.checkShape();
+          && this.calculatePerimeter() == r2.calculatePerimeter()
+          && r2.checkShape();
     }
 }
 

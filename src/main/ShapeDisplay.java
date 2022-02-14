@@ -21,8 +21,6 @@ public class ShapeDisplay {
                 + " is correct Shape: "
                 + base.checkShape()
                 + "\nShape is Equal: "
-                //comparing If Rectangle is equal
-                + base.compareShapeIfEqual("ss", 10, 20)
                 + "\n");
     }
 
@@ -30,19 +28,23 @@ public class ShapeDisplay {
 
         ShapeBase[] shapes = new ShapeBase[4];
         //not a correct Rectangle
-        shapes[0] = new Rectangle("Rectangle_1", 10, 20);
-        shapes[1] = new Square("Square_1", 20, 20);
-        shapes[2] = new Rectangle("Rectangle_2", 10,17);
+        shapes[0] = new Rectangle("Rectangle_1", 0, 0, 10 , 10);
+        shapes[1] = new Square("Square_1", 0, 0, 10 , 10);
+        shapes[2] = new Rectangle("Rectangle_2", 0,0 , 10 , 20);
         //not a correct Square
-        shapes[3] = new Square("Square_2", 9,8);
+        shapes[3] = new Square("Square_2", 0,0, 10 , 20);
 
         for(int i = 0; i < shapes.length; i++) {
             displayArea(shapes[i]);
         }
 
+        Square square1 = new Square("Square_SA", 5 , 5, 10, 10 );
+        Square square2 = new Square("Square_SB", 6,6, 10, 10 );
 
-        ShapeBase rect1 = new Rectangle("Rect_A", 10, 20);
-        ShapeBase rect2 = new Rectangle("Rect_B", 30, 40);
+        Rectangle rect1 = new Rectangle("Rect_A", 100, 100, 40,70);
+        Rectangle rect2 = new Rectangle("Rect_B", 0, 0, 40, 99);
+
+
 
         CompareShape comp1 = new CompareShape(rect1, rect2);
         comp1.printShapeCompares();
@@ -51,14 +53,17 @@ public class ShapeDisplay {
         comp2.printShapeCompares();
 
 
-        System.out.println("\nIs "
-                + rect1.getName()
-                + " compared to "
-                + rect2.getName()
-                + " equal? "
-                + rect1.compareShapeIfEqual(rect2.getName(),
-                rect2.getWidth(),
-                rect2.getHeight()));
+        //comparing two shapes
+        System.out.println("\nAre those two "
+          + rect1.getClass()
+          + " same: "
+          +  rect1.compareShapeIfEqual(rect2));
+        System.out.println("\nAre those two "
+          + square1.getClass()
+          + " same: "
+          + square1.compareShapeIfEqual(square2));
 
+        //collision detection
+        System.out.println("\n" + square1.collisionDetection(square2));
     }
 }
