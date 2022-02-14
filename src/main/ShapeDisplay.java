@@ -38,11 +38,11 @@ public class ShapeDisplay {
             displayArea(shapes[i]);
         }
 
-        Square square1 = new Square("Square_SA", 5 , 5, 10, 10 );
-        Square square2 = new Square("Square_SB", 6,6, 10, 10 );
+        Square square1 = new Square("Square_SA", 11 , 11, 10, 10 );
+        Square square2 = new Square("Square_SB", 0,0, 12, 12 );
 
         Rectangle rect1 = new Rectangle("Rect_A", 100, 100, 40,70);
-        Rectangle rect2 = new Rectangle("Rect_B", 0, 0, 40, 99);
+        Rectangle rect2 = new Rectangle("Rect_B", 0, 0, 40, 101);
 
 
 
@@ -64,6 +64,20 @@ public class ShapeDisplay {
           + square1.compareShapeIfEqual(square2));
 
         //collision detection
-        System.out.println("\n" + square1.collisionDetection(square2));
+        System.out.println("\n"
+          + square1.getName()
+          + " and "
+          + square2.getName()
+          + " Collision: "
+          + square1.collisionDetection(square2));
+
+        System.out.println("\n"
+          + rect1.getName()
+          + " and "
+          + rect2.getName()
+          + " Collision: "
+          + rect1.collisionDetection(rect2));
     }
+
+
 }

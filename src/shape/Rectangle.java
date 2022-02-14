@@ -32,5 +32,15 @@ public class Rectangle extends ShapeBase {
           && this.calculatePerimeter() == r2.calculatePerimeter()
           && r2.checkShape();
     }
+
+    public boolean collisionDetection(Rectangle r2) {
+        if(this.getX1() < r2.getX2()
+          && this.getX2() > r2.getX1()
+          && this.getY1() < r2.getY2()
+          && this.getY2() > r2.getY1()) {
+            return true;
+        }
+        return  false;
+    }
 }
 
