@@ -7,4 +7,5 @@ public interface ShapeInterface {
     boolean checkShape();
     boolean compareShapeIfEqual();
     boolean collisionDetection();
+
 }

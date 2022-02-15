@@ -36,8 +36,11 @@ public class Square extends ShapeBase {
                 && r2.checkShape();
     }
 
-    public boolean collisionDetection(Square shape2) {
-        return super.collisionDetection(shape2);
-    }
 
+    public boolean collisionDetection(Square shape2) {
+        return shape2.x + shape2.width > this.x
+          && shape2.y + shape2.height > this.y
+          && this.x + this.width > shape2.x
+          && this.y + this.height > shape2.y;
+    }
 }
