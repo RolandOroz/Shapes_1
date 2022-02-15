@@ -4,6 +4,7 @@ import base.ShapeBase;
 import comparer.CompareShape;
 import shape.Rectangle;
 import shape.Square;
+import utility.ShapeUtility;
 
 public class ShapeDisplay {
     private static void displayArea(ShapeBase base) {
@@ -36,6 +37,7 @@ public class ShapeDisplay {
 
         for(int i = 0; i < shapes.length; i++) {
             displayArea(shapes[i]);
+
         }
 
         Square square1 = new Square("Square_SA", 11 , 11, 10, 10 );
@@ -76,6 +78,12 @@ public class ShapeDisplay {
           + rect2.getName()
           + " Collision: "
           + rect1.collisionDetection(rect2));
+
+        ShapeUtility calcAllArea = new ShapeUtility(rect1);
+
+        System.out.println("\n"
+        + calcAllArea);
+
     }
 
 
