@@ -79,10 +79,16 @@ public class ShapeDisplay {
           + " Collision: "
           + rect1.collisionDetection(rect2));
 
-        ShapeUtility calcAllArea = new ShapeUtility(shapes);
-
+        new ShapeUtility();
+        double calcAllArea = ShapeUtility.calculateAllShapesAreas(shapes);
+        double calcAllPerim = ShapeUtility.calculateAllShapesPerimeter(shapes);
+        double calcAllCollidArea = ShapeUtility.calculateAllCollidedShapesAreas(shapes);
         System.out.println("\n"
-        + calcAllArea);
+                + calcAllArea
+                + "\n"
+                + calcAllPerim
+                + "\n"
+                + calcAllCollidArea);
 
     }
 
