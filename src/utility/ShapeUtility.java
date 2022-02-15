@@ -2,21 +2,24 @@ package utility;
 
 import base.ShapeBase;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Collections;
-
 public class ShapeUtility {
 
 
-  public ShapeUtility(ShapeBase shape) {
+  public ShapeUtility(ShapeBase[] shape) {
 
 
   }
 
-  public double calculateAllShapesAreas() {
+  // TODO change!!!!!!!!!
+  public double calculateAllShapesAreas(ShapeBase... shapes) {
 
-return 0;
+    double arrArea = 0;
+    for (int i = 0; i < shapes.length; i++){
+
+      arrArea += shapes[i].calculateArea();
+      return i;
+    }
+    return arrArea;
   }
 
   public double calculateAllShapesPerimeter() {
