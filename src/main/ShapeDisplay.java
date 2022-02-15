@@ -41,11 +41,10 @@ public class ShapeDisplay {
         Square square1 = new Square("Square_SA", 11 , 11, 10, 10 );
         Square square2 = new Square("Square_SB", 0,0, 12, 12 );
 
-        Rectangle rect1 = new Rectangle("Rect_A", 100, 100, 40,70);
+        Rectangle rect1 = new Rectangle("Rect_A", 0, 100, 40,70);
         Rectangle rect2 = new Rectangle("Rect_B", 0, 0, 40, 101);
 
-
-
+//
         CompareShape comp1 = new CompareShape(rect1, rect2);
         comp1.printShapeCompares();
 
