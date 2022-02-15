@@ -90,13 +90,10 @@ public class ShapeBase implements ShapeInterface {
     }
 
     public boolean collisionDetection(ShapeBase shape2) {
-        if(shape2.x + shape2.width > this.x
+        return shape2.x + shape2.width > this.x
           && shape2.y + shape2.height > this.y
           && this.x + this.width > shape2.x
-          && this.y + this.height > shape2.y) {
-            return true;
-        }
-        return  false;
+          && this.y + this.height > shape2.y;
     }
 
 
