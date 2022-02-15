@@ -1,8 +1,6 @@
 package base;
 
 
-import shape.Square;
-
 public class ShapeBase implements ShapeInterface {
 
     protected String name;
