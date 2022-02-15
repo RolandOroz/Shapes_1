@@ -90,16 +90,6 @@ public class ShapeBase implements ShapeInterface {
     public boolean collisionDetection() {
         return false;
     }
-//
-//    @Override
-//    public boolean collisionDetection() {
-//        return false;
-//    }
-//    @Override
-//    public boolean compareShapeIfEqual() {
-//        return false;
-//    }
-
 
     public boolean collisionDetection(ShapeBase shape2) {
         if(shape2.x + shape2.width > this.x
