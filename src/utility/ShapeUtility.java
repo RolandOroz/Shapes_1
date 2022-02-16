@@ -51,6 +51,12 @@ public class ShapeUtility {
     // y
     int minY = 0;
 
+    int bottomLeft = 0;
+    int topRight = 0;
+
+    int combinedShapes = 0;
+
+
     //todo only a try to use Polygon
     Polygon poly = new Polygon();
     poly.addPoint(minX, minY);
