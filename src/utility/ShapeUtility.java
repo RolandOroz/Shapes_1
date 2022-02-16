@@ -33,7 +33,7 @@ public class ShapeUtility {
     return sumAllShapesPerimeter;
 
   }
-
+//TODO change !!!!!!!11
   public static double calculateAllCollidedShapesAreas(ShapeBase[] shapes) {
     double sumAllCollidedShapesArea = 0;
     for(int i = 0; i < shapes.length; i++) {
