@@ -29,11 +29,11 @@ public class ShapeDisplay {
 
         ShapeBase[] shapes = new ShapeBase[4];
         //not a correct Rectangle
-        shapes[0] = new Rectangle("Rectangle_1", 0, 0, 10 , 10);
-        shapes[1] = new Square("Square_1", 0, 0, 10 , 10);
-        shapes[2] = new Rectangle("Rectangle_2", 0,0 , 10 , 20);
+        shapes[0] = new Rectangle("Rectangle_1", 8, 4, 10 , 10);
+        shapes[1] = new Square("Square_1", 2, 5, 10 , 10);
+        shapes[2] = new Rectangle("Rectangle_2", -1,-3 , 10 , 20);
         //not a correct Square
-        shapes[3] = new Square("Square_2", 0,0, 10 , 20);
+        shapes[3] = new Square("Square_2", 12,1, 9 , 30);
 
         for(int i = 0; i < shapes.length; i++) {
             displayArea(shapes[i]);

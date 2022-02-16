@@ -2,6 +2,8 @@ package utility;
 
 import base.ShapeBase;
 
+import java.awt.*;
+
 public class ShapeUtility {
 
   public void displayUtility(ShapeBase shapeBase) {
@@ -36,12 +38,46 @@ public class ShapeUtility {
 //TODO change !!!!!!!11
   public static double calculateAllCollidedShapesAreas(ShapeBase[] shapes) {
     double sumAllCollidedShapesArea = 0;
+
+    //Setting the matrix from lowest x, y point to
+    // highest x, y point (x1,y1 - x2,y2)
+
+    // x + width
+    int maxX = 0;
+    // y + width
+    int maxY = 0;
+    // x
+    int minX = 0;
+    // y
+    int minY = 0;
+
+    //todo only a try to use Polygon
+    Polygon poly = new Polygon();
+    poly.addPoint(minX, minY);
+
     for(int i = 0; i < shapes.length; i++) {
-      if(shapes[i].collisionDetection()) {
-        sumAllCollidedShapesArea += shapes[i].calculateArea();
+      int getX  = shapes[i].getX();
+      int getY  = shapes[i].getY();
+      int getMaxX = (int) (shapes[i].getX() + shapes[i].getWidth());
+      int getMaxY = (int) (shapes[i].getY() + shapes[i].getHeight());
+
+      if(getMaxX > maxX) {
+        maxX = getMaxX;
+      } if(getMaxY > maxY) {
+        maxY = getMaxY;
+      } if(getX < minX) {
+        minX = getX;
+      } if(getY < minY) {
+        minY = getY;
       }
-    }return sumAllCollidedShapesArea;
+
+
+
+
+    }return maxY;
   }
+
+
 
 
     public double calculateAllCollidedShapesPerimeter() {
