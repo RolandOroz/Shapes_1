@@ -79,7 +79,8 @@ public class ShapeDisplay {
           + " and "
           + rect2.getName()
           + " Collision: "
-          + rect1.collisionDetection(rect2));
+          + rect1.collisionDetection(rect2)
+          + "\n");
 
         new ShapeUtility();
         double calcAllArea = ShapeUtility.calculateAllShapesAreas(shapes);
