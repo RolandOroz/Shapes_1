@@ -58,7 +58,7 @@ public class ShapeUtility {
     int matrixHeight = 0;
 
 
-    int[][] matrixOfAllShapes = new int[0][0];
+    int[][] matrixOfAllShapes = {{0},{0}};
     for(int i = 0; i < shapes.length; i++) {
       int getX  = shapes[i].getX();
       int getY  = shapes[i].getY();
@@ -80,11 +80,14 @@ public class ShapeUtility {
       }
       matrixWidth = bottomLeft[0] + topRight[0];
       matrixHeight = bottomLeft[1] + topRight[1];
-      matrixOfAllShapes = new int[(int)matrixWidth][(int)matrixHeight];
-    }
+
+
+    }matrixOfAllShapes = new int[(int)matrixWidth][(int)matrixHeight];
     for(int j = 0; j < matrixOfAllShapes.length; j++) {
+
       for (int k = 0; k < matrixOfAllShapes[j].length; k++) {
-        System.out.println(j + ", " +  k);
+        System.out.println((j+1) + ", " +  (k + 1));
+
       }
     }
     return (matrixHeight * matrixWidth);
