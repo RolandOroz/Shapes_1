@@ -54,14 +54,11 @@ public class ShapeUtility {
 
     int[] bottomLeft = new int[2];
     int[] topRight = new int[2];
+    int matrixWidth = 0;
+    int matrixHeight = 0;
 
-    int combinedShapes = 0;
 
-
-    //todo only a try to use Polygon
-    Polygon poly = new Polygon();
-    poly.addPoint(minX, minY);
-
+    int[][] matrixOfAllShapes = new int[0][0];
     for(int i = 0; i < shapes.length; i++) {
       int getX  = shapes[i].getX();
       int getY  = shapes[i].getY();
@@ -81,10 +78,16 @@ public class ShapeUtility {
         minY = getY;
         bottomLeft[1] = Math.abs(minY);
       }
-
-
-
-    }return ((bottomLeft[0] + topRight[0]) * (bottomLeft[1] + topRight[1]));
+      matrixWidth = bottomLeft[0] + topRight[0];
+      matrixHeight = bottomLeft[1] + topRight[1];
+      matrixOfAllShapes = new int[(int)matrixWidth][(int)matrixHeight];
+    }
+    for(int j = 0; j < matrixOfAllShapes.length; j++) {
+      for (int k = 0; k < matrixOfAllShapes[j].length; k++) {
+        System.out.println(j + ", " +  k);
+      }
+    }
+    return (matrixHeight * matrixWidth);
 
   }
 
