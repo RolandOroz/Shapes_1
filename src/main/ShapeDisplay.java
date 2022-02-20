@@ -27,13 +27,15 @@ public class ShapeDisplay {
 
     public static void main(String[] args) {
 
-        ShapeBase[] shapes = new ShapeBase[4];
+        ShapeBase[] shapes = new ShapeBase[7];
         //not a correct Rectangle
-        shapes[0] = new Rectangle("Rectangle_1", 8, 4, 10 , 10);
-        shapes[1] = new Square("Square_1", 2, 5, 10 , 10);
-        shapes[2] = new Rectangle("Rectangle_2", -1,-3 , 10 , 20);
-        //not a correct Square
-        shapes[3] = new Square("Square_2", 12,1, 9 , 30);
+        shapes[0] = new Square("Square_1", 0, 0, 5 , 5);
+        shapes[1] = new Square("Square_2", 2, 22, 8 , 8);
+        shapes[2] = new Rectangle("Rectangle_1", 4,4 , 20 , 10);
+        shapes[3] = new Square("Square_3", 11,12, 8 , 8);
+        shapes[4] = new Square("Square_4", 11,-2, 4 , 4);
+        shapes[5] = new Rectangle("Rectangle_2", 15,2, 10 , 20);
+        shapes[6] = new Rectangle("Rectangle_3", 20,24, 10 , 6);
 
         for(int i = 0; i < shapes.length; i++) {
             displayArea(shapes[i]);

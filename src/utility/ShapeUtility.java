@@ -3,6 +3,7 @@ package utility;
 import base.ShapeBase;
 
 import java.awt.*;
+import java.util.Arrays;
 
 public class ShapeUtility {
 
@@ -51,8 +52,8 @@ public class ShapeUtility {
     // y
     int minY = 0;
 
-    int bottomLeft = 0;
-    int topRight = 0;
+    int[] bottomLeft = new int[2];
+    int[] topRight = new int[2];
 
     int combinedShapes = 0;
 
@@ -69,18 +70,22 @@ public class ShapeUtility {
 
       if(getMaxX > maxX) {
         maxX = getMaxX;
+        topRight[0] = Math.abs(maxX);
       } if(getMaxY > maxY) {
         maxY = getMaxY;
+        topRight[1] = Math.abs(maxY);
       } if(getX < minX) {
         minX = getX;
+        bottomLeft[0] = Math.abs(minX);
       } if(getY < minY) {
         minY = getY;
+        bottomLeft[1] = Math.abs(minY);
       }
 
 
 
+    }return ((bottomLeft[0] + topRight[0]) * (bottomLeft[1] + topRight[1]));
 
-    }return maxY;
   }
 
 
