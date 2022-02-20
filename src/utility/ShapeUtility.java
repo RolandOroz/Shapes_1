@@ -84,21 +84,12 @@ public class ShapeUtility {
 
     }
     matrixOfAllShapes = new int[(int)matrixWidth][(int)matrixHeight];
-    for(int j = 0; j < matrixOfAllShapes.length; j++) {
 
-      for (int k = 0; k < matrixOfAllShapes[j].length; k++) {
-        //matrixOfAllShapes[j][k] += Integer.parseInt("A");
-       // System.out.println((j) + ", " + k + " = " + matrixOfAllShapes[j][k]);
-
-      }
-    }
 
     for(int j = 0; j < matrixOfAllShapes.length; j++) {
 
       for (int k = 0; k < matrixOfAllShapes[j].length; k++) {
-        //matrixOfAllShapes[j][k] += Integer.parseInt("A");
-        System.out.print(/*(j) + ", " + k + " = " + */matrixOfAllShapes[j][k] + ", ");
-
+        System.out.print(matrixOfAllShapes[j][k] + ", ");
       }
       System.out.println();
     }
