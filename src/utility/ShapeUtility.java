@@ -87,8 +87,14 @@ public class ShapeUtility {
 
 
     for(int j = 0; j < matrixOfAllShapes.length; j++) {
-
+      if(j <= 9) {
+        System.out.print(j + "..  ");
+      }
+      if (j > 9) {
+        System.out.print(j + ".. ");
+      }
       for (int k = 0; k < matrixOfAllShapes[j].length; k++) {
+
         System.out.print(matrixOfAllShapes[j][k] + ", ");
       }
       System.out.println();
