@@ -87,11 +87,11 @@ public class ShapeDisplay {
         double calcAllPerim = ShapeUtility.calculateAllShapesPerimeter(shapes);
         double calcAllCollidArea = ShapeUtility.calculateAllCollidedShapesAreas(shapes);
 
-        System.out.println("\n"
+        System.out.println("\n All shapes Area: "
                 + calcAllArea
-                + "\n"
+                + "\n All shapes Perimeter: "
                 + calcAllPerim
-                + "\n"
+                + "\n Matrix Area: "
                 + calcAllCollidArea);
 
     }

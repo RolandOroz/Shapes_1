@@ -38,7 +38,7 @@ public class ShapeUtility {
   }
 //TODO change !!!!!!!11
   public static double calculateAllCollidedShapesAreas(ShapeBase[] shapes) {
-    double sumAllCollidedShapesArea = 0;
+    int sumAllCollidedShapesArea = 0;
 
     //Setting the matrix from lowest x, y point to
     // highest x, y point (x1,y1 - x2,y2)
@@ -57,8 +57,16 @@ public class ShapeUtility {
     int matrixWidth = 0;
     int matrixHeight = 0;
 
+    int[] xX;
+    int[] yY;
 
     int[][] matrixOfAllShapes = {{0},{0}};
+
+
+
+
+
+
     for(int i = 0; i < shapes.length; i++) {
       int getX  = shapes[i].getX();
       int getY  = shapes[i].getY();
@@ -68,6 +76,7 @@ public class ShapeUtility {
       if(getMaxX > maxX) {
         maxX = getMaxX;
         topRight[0] = Math.abs(maxX);
+
       } if(getMaxY > maxY) {
         maxY = getMaxY;
         topRight[1] = Math.abs(maxY);
@@ -80,22 +89,19 @@ public class ShapeUtility {
       }
       matrixWidth = bottomLeft[0] + topRight[0];
       matrixHeight = bottomLeft[1] + topRight[1];
-
+      sumAllCollidedShapesArea +=   getX;
 
     }
     matrixOfAllShapes = new int[(int)matrixWidth][(int)matrixHeight];
 
 
     for(int j = 0; j < matrixOfAllShapes.length; j++) {
-      if(j <= 9) {
-        System.out.print(j + "..  ");
-      }
-      if (j > 9) {
+
         System.out.print(j + ".. ");
-      }
+
       for (int k = 0; k < matrixOfAllShapes[j].length; k++) {
 
-        System.out.print(matrixOfAllShapes[j][k] + ", ");
+        System.out.print(matrixOfAllShapes[j][k] + k + ", ");
       }
       System.out.println();
     }
@@ -103,10 +109,6 @@ public class ShapeUtility {
     return (matrixHeight * matrixWidth);
 
   }
-
-
-
-
     public double calculateAllCollidedShapesPerimeter() {
     return 0;
   }
