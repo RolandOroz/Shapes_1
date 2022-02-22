@@ -57,14 +57,40 @@ public class ShapeUtility {
     int matrixWidth = 0;
     int matrixHeight = 0;
 
-    int[] xX;
-    int[] yY;
-
     int[][] matrixOfAllShapes = {{0},{0}};
 
 
+    int finalMatrixWidth = matrixWidth;
+    int finalMatrixHeight = matrixHeight;
+    class Cell {
+      private final int x;
+      private final int y;
+      private int state;
 
+      public Cell(int x, int y, int state) {
+        this.x = x;
+        this.y = y;
+        this.state = state;
+      }
 
+      public boolean isOff(){
+        return state == 0;
+      }
+
+      public boolean isOn(){
+        return state == 1;
+      }
+
+      public void turnOff(){
+        state = 0;
+      }
+
+      public void turnOn(){
+        state = 1;
+      }
+
+      Cell[][] array = new Cell[finalMatrixWidth][finalMatrixHeight];
+    }
 
 
     for(int i = 0; i < shapes.length; i++) {
@@ -89,17 +115,20 @@ public class ShapeUtility {
       }
       matrixWidth = bottomLeft[0] + topRight[0];
       matrixHeight = bottomLeft[1] + topRight[1];
-      sumAllCollidedShapesArea +=   getX;
+
 
     }
     matrixOfAllShapes = new int[(int)matrixWidth][(int)matrixHeight];
 
 
-    for(int j = 0; j < matrixOfAllShapes.length; j++) {
+    for(int j = 0; j < matrixWidth; j++) {
 
+      int x = matrixWidth;
         System.out.print(j + ".. ");
 
-      for (int k = 0; k < matrixOfAllShapes[j].length; k++) {
+      for (int k = 0; k < matrixHeight; k++) {
+        int y = matrixHeight;
+        matrixOfAllShapes[j][k] = x;
 
         System.out.print(matrixOfAllShapes[j][k] + k + ", ");
       }
