@@ -93,6 +93,7 @@ public class ShapeUtility {
     }
 
 
+
     for(int i = 0; i < shapes.length; i++) {
       int getX  = shapes[i].getX();
       int getY  = shapes[i].getY();
@@ -123,14 +124,11 @@ public class ShapeUtility {
 
     for(int j = 0; j < matrixHeight; j++) {
 
-
-        System.out.print(j + ".. ");
-
+      System.out.print(j + ".. ");
       for (int k = 0; k < matrixWidth; k++) {
+        matrixOfAllShapes(Math.abs(bottomLeft[0]),(Math.abs(topRight[0])));
 
-
-
-        System.out.print( k);
+        System.out.print(topRight[0]);
       }
       System.out.println();
     }
@@ -138,7 +136,11 @@ public class ShapeUtility {
     return (matrixHeight * matrixWidth);
 
   }
-    public double calculateAllCollidedShapesPerimeter() {
+
+  private static void matrixOfAllShapes(int abs, int abs1) {
+  }
+
+  public double calculateAllCollidedShapesPerimeter() {
     return 0;
   }
 }
