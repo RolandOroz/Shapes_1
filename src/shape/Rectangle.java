@@ -5,6 +5,7 @@ import base.ShapeBase;
 public class Rectangle extends ShapeBase {
 
     public Rectangle(String name, int x, int y, double width, double height) {
+
         super(name, x, y, width, height);
     }
 

@@ -121,16 +121,16 @@ public class ShapeUtility {
     matrixOfAllShapes = new int[(int)matrixWidth][(int)matrixHeight];
 
 
-    for(int j = 0; j < matrixWidth; j++) {
+    for(int j = 0; j < matrixHeight; j++) {
 
-      int x = matrixWidth;
+
         System.out.print(j + ".. ");
 
-      for (int k = 0; k < matrixHeight; k++) {
-        int y = matrixHeight;
-        matrixOfAllShapes[j][k] = x;
+      for (int k = 0; k < matrixWidth; k++) {
 
-        System.out.print(matrixOfAllShapes[j][k] + k + ", ");
+
+
+        System.out.print( k);
       }
       System.out.println();
     }

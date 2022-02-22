@@ -37,6 +37,7 @@ public class ShapeDisplay {
         shapes[5] = new Rectangle("Rectangle_2", 15,2, 10 , 20);
         shapes[6] = new Rectangle("Rectangle_3", 20,24, 10 , 6);
 
+
         for(int i = 0; i < shapes.length; i++) {
             displayArea(shapes[i]);
 
