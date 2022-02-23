@@ -60,7 +60,7 @@ public class ShapeDisplay {
 
         //comparing two shapes
         System.out.println("\nAre those two "
-          + rect1.getClass()
+          + rect1.getClass()//method to calculate all intersected shapes area as polygon area
           + " same: "
           +  rect1.compareShapeIfEqual(rect2));
         System.out.println("\nAre those two "
@@ -95,6 +95,9 @@ public class ShapeDisplay {
                 + calcAllPerim
                 + "\n Matrix Area: "
                 + calcAllCollidArea);
-        System.out.println(Matrix.offsetPoint(shapes));
+
+        new Matrix().displayMatrix(shapes);
+
+        System.out.println();
     }
 }

@@ -1,19 +1,20 @@
 package utility;
 
 import base.ShapeBase;
+import org.jetbrains.annotations.NotNull;
+
+//Todo make init off shapes!!!!!
 
 public class Matrix {
-
-
-
   Integer maximX;
   Integer maximY;
   Integer minimX;
   Integer minimY;
-  static int maxX = Integer.MIN_VALUE;
-  static int maxY = Integer.MIN_VALUE;
 
-  public static int offsetPoint(ShapeBase[] shapes){
+  private int maxX = Integer.MIN_VALUE;
+  private int maxY = Integer.MIN_VALUE;
+
+  protected void offsetPoint(ShapeBase[] shapes){
     Integer offSetMinX = null;
     Integer offSetMinY = null;
     Integer offSetMaxX = null;
@@ -31,19 +32,22 @@ public class Matrix {
       offSetMinY = y - (y);
       offSetMaxX = x2;
       offSetMaxY = y2;
-      if(x > maxX){
-        maxX = x;
+      if(x > this.maxX){
+        this.maxX = x;
       }
-      if(y > maxY){
-        maxY = y;
+      if(y > this.maxY){
+        this.maxY = y;
       }
     }
 
-    return 0;
+
   }
 
-  public static void displayMatrix(int m){
 
+
+
+  public void displayMatrix(ShapeBase[] shapes){
+    this.offsetPoint(shapes);
   }
 
 }
