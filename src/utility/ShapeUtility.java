@@ -44,20 +44,20 @@ public class ShapeUtility {
     // highest x, y point (x1,y1 - x2,y2)
 
     // x + width
-    int maxX = 0;
+    int maxX = Integer.MIN_VALUE;
     // y + width
-    int maxY = 0;
+    int maxY = Integer.MIN_VALUE;
     // x
-    int minX = 0;
+    int minX = Integer.MAX_VALUE;
     // y
-    int minY = 0;
+    int minY = Integer.MAX_VALUE;
 
     int[] bottomLeft = new int[2];
     int[] topRight = new int[2];
     int matrixWidth = 0;
     int matrixHeight = 0;
 
-    int[][] matrixOfAllShapes = {{0},{0}};
+
 
 
     int finalMatrixWidth = matrixWidth;
@@ -95,23 +95,24 @@ public class ShapeUtility {
 
 
     for(int i = 0; i < shapes.length; i++) {
-      int getX  = shapes[i].getX();
-      int getY  = shapes[i].getY();
-      int getMaxX = (int) (shapes[i].getX() + shapes[i].getWidth());
-      int getMaxY = (int) (shapes[i].getY() + shapes[i].getHeight());
+      int shapeX  = shapes[i].getX();
+      int shapeY  = shapes[i].getY();
+      int shapeMaxX = (int) (shapes[i].getX() + shapes[i].getWidth());
+      int shapeMaxY = (int) (shapes[i].getY() + shapes[i].getHeight());
 
-      if(getMaxX > maxX) {
-        maxX = getMaxX;
+
+      if(shapeMaxX > maxX) {
+        maxX = shapeMaxX;
         topRight[0] = Math.abs(maxX);
 
-      } if(getMaxY > maxY) {
-        maxY = getMaxY;
+      } if(shapeMaxY > maxY) {
+        maxY = shapeMaxY;
         topRight[1] = Math.abs(maxY);
-      } if(getX < minX) {
-        minX = getX;
+      } if(shapeX < minX) {
+        minX = shapeX;
         bottomLeft[0] = Math.abs(minX);
-      } if(getY < minY) {
-        minY = getY;
+      } if(shapeY < minY) {
+        minY = shapeY;
         bottomLeft[1] = Math.abs(minY);
       }
       matrixWidth = bottomLeft[0] + topRight[0];
@@ -119,16 +120,18 @@ public class ShapeUtility {
 
 
     }
-    matrixOfAllShapes = new int[(int)matrixWidth][(int)matrixHeight];
+    int [][] matrixOfAllShapes = new int[(int)matrixHeight][(int)matrixWidth];
+
 
 
     for(int j = 0; j < matrixHeight; j++) {
 
       System.out.print(j + ".. ");
       for (int k = 0; k < matrixWidth; k++) {
-        matrixOfAllShapes(Math.abs(bottomLeft[0]),(Math.abs(topRight[0])));
 
-        System.out.print(topRight[0]);
+        matrixOfAllShapes[j][k] = 0;
+
+        System.out.print(matrixOfAllShapes[j][k]);
       }
       System.out.println();
     }

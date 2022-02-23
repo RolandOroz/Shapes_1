@@ -4,6 +4,7 @@ import base.ShapeBase;
 import comparer.CompareShape;
 import shape.Rectangle;
 import shape.Square;
+import utility.Matrix;
 import utility.ShapeUtility;
 
 public class ShapeDisplay {
@@ -27,15 +28,15 @@ public class ShapeDisplay {
 
     public static void main(String[] args) {
 
-        ShapeBase[] shapes = new ShapeBase[7];
+        ShapeBase[] shapes = new ShapeBase[2];
         //not a correct Rectangle
-        shapes[0] = new Square("Square_1", 0, 0, 5 , 5);
-        shapes[1] = new Square("Square_2", 2, 22, 8 , 8);
-        shapes[2] = new Rectangle("Rectangle_1", 4,4 , 20 , 10);
-        shapes[3] = new Square("Square_3", 11,12, 8 , 8);
-        shapes[4] = new Square("Square_4", 11,-2, 4 , 4);
-        shapes[5] = new Rectangle("Rectangle_2", 15,2, 10 , 20);
-        shapes[6] = new Rectangle("Rectangle_3", 20,24, 10 , 6);
+        shapes[0] = new Square("Square_1", -12, -12, 2 , 2);
+        shapes[1] = new Square("Square_2", 3, 3, 2 , 2);
+//        shapes[2] = new Rectangle("Rectangle_1", 4,4 , 20 , 10);
+//        shapes[3] = new Square("Square_3", 11,12, 8 , 8);
+//        shapes[4] = new Square("Square_4", 11,-2, 4 , 4);
+//        shapes[5] = new Rectangle("Rectangle_2", 15,2, 10 , 20);
+//        shapes[6] = new Rectangle("Rectangle_3", 20,24, 10 , 6);
 
 
         for(int i = 0; i < shapes.length; i++) {
@@ -53,8 +54,8 @@ public class ShapeDisplay {
         CompareShape comp1 = new CompareShape(rect1, rect2);
         comp1.printShapeCompares();
 
-        CompareShape comp2 = new CompareShape(shapes[1], shapes[2]);
-        comp2.printShapeCompares();
+//        CompareShape comp2 = new CompareShape(shapes[1], shapes[2]);
+//        comp2.printShapeCompares();
 
 
         //comparing two shapes
@@ -94,8 +95,6 @@ public class ShapeDisplay {
                 + calcAllPerim
                 + "\n Matrix Area: "
                 + calcAllCollidArea);
-
+        System.out.println(Matrix.offsetPoint(shapes));
     }
-
-
 }
