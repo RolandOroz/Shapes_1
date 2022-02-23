@@ -89,7 +89,7 @@ public class ShapeUtility {
         state = 1;
       }
 
-      Cell[][] array = new Cell[finalMatrixWidth][finalMatrixHeight];
+
     }
 
 

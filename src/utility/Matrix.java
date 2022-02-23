@@ -13,6 +13,7 @@ public class Matrix {
 
   private int maxX = Integer.MIN_VALUE;
   private int maxY = Integer.MIN_VALUE;
+  //Cell[][] array new Cell[][];
 
   protected void offsetPoint(ShapeBase[] shapes){
     Integer offSetMinX = null;
@@ -39,15 +40,19 @@ public class Matrix {
         this.maxY = y;
       }
     }
-
-
   }
 
+  protected void setPoints(ShapeBase[] shapes){
+  }
 
 
 
   public void displayMatrix(ShapeBase[] shapes){
     this.offsetPoint(shapes);
+
+    for(int i = 0; i < shapes.length; i++) {
+
+    }
   }
 
 }
