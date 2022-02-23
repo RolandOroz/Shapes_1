@@ -10,18 +10,19 @@ public class Matrix {
   Integer maximY;
   Integer minimX;
   Integer minimY;
+  Integer matrixHeight = null;
+  Integer matrixWidth = null;
 
   private int maxX = Integer.MIN_VALUE;
   private int maxY = Integer.MIN_VALUE;
 
 
-  protected void offsetPoint(ShapeBase[] shapes){
+  protected void offsetPoint(ShapeBase @NotNull [] shapes){
     Integer offSetMinX = null;
     Integer offSetMinY = null;
     Integer offSetMaxX = null;
     Integer offSetMaxY = null;
-    Integer matrixHeight = null;
-    Integer matrixWidth = null;
+
 
 
     for(int i = 0; i < shapes.length; i++ ){
@@ -44,19 +45,24 @@ public class Matrix {
         this.maxY = y;
       }
     }
-    int[][] matrix = new int[matrixWidth][matrixHeight];
+
   }
 
   protected void setPoints(ShapeBase[] shapes){
+    int[][] matrix = new int[matrixWidth][matrixHeight];
   }
 
 
 
   public void displayMatrix(ShapeBase[] shapes){
     this.offsetPoint(shapes);
+    this.setPoints(shapes);
 
-    for(int i = 0; i < shapes.length; i++) {
-
+    for(int row = 0; row < matrixWidth; row++) {
+      for (int col = 0; col < matrixHeight; col++){
+        System.out.println(row + ", "+ col);
+      }
+      System.out.println();
     }
   }
 
