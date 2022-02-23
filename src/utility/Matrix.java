@@ -13,13 +13,15 @@ public class Matrix {
 
   private int maxX = Integer.MIN_VALUE;
   private int maxY = Integer.MIN_VALUE;
-  //Cell[][] array new Cell[][];
+
 
   protected void offsetPoint(ShapeBase[] shapes){
     Integer offSetMinX = null;
     Integer offSetMinY = null;
     Integer offSetMaxX = null;
     Integer offSetMaxY = null;
+    Integer matrixHeight = null;
+    Integer matrixWidth = null;
 
 
     for(int i = 0; i < shapes.length; i++ ){
@@ -31,8 +33,10 @@ public class Matrix {
 
       offSetMinX = x - (x);
       offSetMinY = y - (y);
-      offSetMaxX = x2;
-      offSetMaxY = y2;
+      offSetMaxX = offSetMinX + x2;
+      offSetMaxY = offSetMinY + y2;
+      matrixHeight = y2;
+      matrixWidth = x2;
       if(x > this.maxX){
         this.maxX = x;
       }
@@ -40,6 +44,7 @@ public class Matrix {
         this.maxY = y;
       }
     }
+    int[][] matrix = new int[matrixWidth][matrixHeight];
   }
 
   protected void setPoints(ShapeBase[] shapes){
