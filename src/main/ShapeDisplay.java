@@ -28,11 +28,11 @@ public class ShapeDisplay {
 
     public static void main(String[] args) {
 
-        ShapeBase[] shapes = new ShapeBase[2];
+        ShapeBase[] shapes = new ShapeBase[3];
         //not a correct Rectangle
         shapes[0] = new Square("Square_1", -12, -12, 2 , 2);
         shapes[1] = new Square("Square_2", 3, 3, 2 , 2);
-//        shapes[2] = new Rectangle("Rectangle_1", 4,4 , 20 , 10);
+        shapes[2] = new Rectangle("Rectangle_1", 4,4 , 20 , 10);
 //        shapes[3] = new Square("Square_3", 11,12, 8 , 8);
 //        shapes[4] = new Square("Square_4", 11,-2, 4 , 4);
 //        shapes[5] = new Rectangle("Rectangle_2", 15,2, 10 , 20);

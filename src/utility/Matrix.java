@@ -33,11 +33,15 @@ public class Matrix {
 
 
       offSetMinX = x - (x);
+      minimX = offSetMinX;
       offSetMinY = y - (y);
+      minimY = offSetMinY;
       offSetMaxX = offSetMinX + x2;
       offSetMaxY = offSetMinY + y2;
       matrixHeight = y2;
+      maximY = offSetMaxY;
       matrixWidth = x2;
+      maximX = offSetMaxX;
       if(x > this.maxX){
         this.maxX = x;
       }
@@ -45,6 +49,8 @@ public class Matrix {
         this.maxY = y;
       }
     }
+
+
 
   }
 
@@ -58,9 +64,16 @@ public class Matrix {
     this.offsetPoint(shapes);
     this.setPoints(shapes);
 
-    for(int row = 0; row < matrixWidth; row++) {
-      for (int col = 0; col < matrixHeight; col++){
-        System.out.println(row + ", "+ col);
+    int[][] matrix = new int[matrixWidth][matrixHeight];
+
+    for(int row = 0; row < matrix.length; row++) {
+
+      System.out.print(row + ".. ");
+      for (int col = 0; col < matrix[row].length; col++){
+if(row == minimX && col == minimY)
+        matrix[row][col] = 1;
+//        matrix[maximX-1][maximY-1] = 1;
+        System.out.print(matrix[row][col]);
       }
       System.out.println();
     }
