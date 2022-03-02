@@ -1,79 +1,134 @@
 package utility;
 
 import base.ShapeBase;
-import org.jetbrains.annotations.NotNull;
 
 //Todo make init off shapes!!!!!
 
+//Setting teh Matrix width and height
 public class Matrix {
-  Integer maximX;
-  Integer maximY;
-  Integer minimX;
-  Integer minimY;
-  Integer matrixHeight = null;
-  Integer matrixWidth = null;
-
-  private int maxX = Integer.MIN_VALUE;
-  private int maxY = Integer.MIN_VALUE;
 
 
-  protected void offsetPoint(ShapeBase @NotNull [] shapes){
-    Integer offSetMinX = null;
-    Integer offSetMinY = null;
-    Integer offSetMaxX = null;
-    Integer offSetMaxY = null;
 
-    for(int i = 0; i < shapes.length; i++ ){
-      int x = shapes[i].getX();
-      int x2 = (int) (shapes[i].getX() + shapes[i].getWidth());
-      int y = shapes[i].getY();
-      int y2 = (int)(shapes[i].getY() + shapes[i].getHeight());
 
-      offSetMinX = x - (x);
-      minimX = offSetMinX;
-      offSetMinY = y - (y);
-      minimY = offSetMinY;
-      offSetMaxX = offSetMinX + x2;
-      offSetMaxY = offSetMinY + y2;
-      matrixHeight = y2;
-      maximY = offSetMaxY;
-      matrixWidth = x2;
-      maximX = offSetMaxX;
-      if(x > this.maxX){
-        this.maxX = x;
+//  private int maxX = Integer.MIN_VALUE;
+//  private int maxY = Integer.MIN_VALUE;
+//  private int minX = Integer.MAX_VALUE;
+//  private int minY = Integer.MAX_VALUE;
+
+
+
+  protected int setupMatrix(ShapeBase[] shapes){
+
+    int sumAllCollidedShapesArea = 0;
+
+    //Setting the matrix from lowest x, y point to
+    // highest x, y point (x1,y1 - x2,y2)
+
+    // x + width
+    int maxX = Integer.MIN_VALUE;
+    // y + width
+    int maxY = Integer.MIN_VALUE;
+    // x
+    int minX = Integer.MAX_VALUE;
+    // y
+    int minY = Integer.MAX_VALUE;
+
+    //Offsetting minX and minY if minus to (0)x and (0)y
+    int offsetMinX = Integer.MAX_VALUE;
+    int offsetMinY = Integer.MAX_VALUE;
+    int offsetMaxX = Integer.MIN_VALUE;
+    int offsetMaxY = Integer.MIN_VALUE;
+
+    int[] bottomLeft = new int[2];
+    int[] topRight = new int[2];
+    int matrixWidth = 0;
+    int matrixHeight = 0;
+
+
+    int finalMatrixWidth = matrixWidth;
+    int finalMatrixHeight = matrixHeight;
+
+
+    for(int i = 0; i < shapes.length; i++) {
+      int shapeX  = shapes[i].getX();
+      int shapeY  = shapes[i].getY();
+      int shapeMaxX = (int) (shapes[i].getX() + shapes[i].getWidth());
+      int shapeMaxY = (int) (shapes[i].getY() + shapes[i].getHeight());
+
+      if(shapeX < 0) {
+        offsetMinX = 0;
+        offsetMaxX = offsetMinX + shapeMaxX;
       }
-      if(y > this.maxY){
-        this.maxY = y;
+      if(shapeY < 0) {
+        offsetMinY = 0;
+        offsetMaxY = offsetMinY + shapeMaxX;
       }
+      if(shapeX >= 0) {
+        offsetMinX = shapeX;
+        offsetMaxX =  shapeMaxX;
+      }
+      if(shapeY >= 0) {
+        offsetMinY = shapeY;
+        offsetMaxY =  shapeMaxY;
+      }
+
+      if(shapeMaxX > maxX) {
+        maxX = shapeMaxX;
+        topRight[0] = Math.abs(maxX);
+
+      }
+      if(shapeMaxY > maxY) {
+        maxY = shapeMaxY;
+        topRight[1] = Math.abs(maxY);
+      }
+      if(shapeX < minX) {
+        minX = shapeX;
+        bottomLeft[0] = Math.abs(minX);
+      }
+      if(shapeY < minY) {
+        minY = shapeY;
+        bottomLeft[1] = Math.abs(minY);
+      }
+      matrixWidth = bottomLeft[0] + topRight[0];
+      matrixHeight = bottomLeft[1] + topRight[1];
+
+
     }
+   // int[][] allShapesMinPoint = new int[offsetMinX][offsetMinY];
+    int [][] matrixOfAllShapes = new int[(int)matrixHeight][(int)matrixWidth];
 
-    int[][] matrix = new int[matrixWidth][matrixHeight];
 
-    for(int row = 0; row < matrix.length; row++) {
 
-      System.out.print(row + ".. ");
-      for (int col = 0; col < matrix[row].length; col++){
-        if(row == minimX && col == minimY)
-          matrix[row][col] = 1;
-//        matrix[maximX-1][maximY-1] = 1;
-        System.out.print(matrix[row][col]);
+    for(int j = 0; j < matrixHeight; j++) {
+
+      System.out.print(j + ".. ");
+      for (int k = 0; k < matrixWidth; k++) {
+
+        matrixOfAllShapes[j][k] = 0;
+
+
+          matrixOfAllShapes[offsetMinX][offsetMinY] = 1;
+          matrixOfAllShapes[offsetMaxX][offsetMaxY] = 1;
+
+        System.out.print(matrixOfAllShapes[j][k]);
       }
       System.out.println();
     }
 
+    return (matrixHeight * matrixWidth);
+
   }
 
-  protected void setPoints(ShapeBase[] shapes){
-    int[][] matrix = new int[matrixWidth][matrixHeight];
+  private static void matrixOfAllShapes(int abs, int abs1) {
   }
 
+  public double calculateAllCollidedShapesPerimeter() {
+    return 0;
+  }
 
 
   public void displayMatrix(ShapeBase[] shapes){
-    this.offsetPoint(shapes);
-    this.setPoints(shapes);
-
-
+    this.setupMatrix(shapes);
   }
 
 }

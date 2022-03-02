@@ -30,8 +30,8 @@ public class ShapeDisplay {
 
         ShapeBase[] shapes = new ShapeBase[2];
         //not a correct Rectangle
-        shapes[0] = new Square("Square_1", -12, -12, 2 , 2);
-        shapes[1] = new Square("Square_2", 3, 3, 2 , 2);
+        shapes[0] = new Square("Square_1", 1, 1, 3 , 3);
+        shapes[1] = new Square("Square_2", 5, 5, 2 , 2);
 //        shapes[2] = new Rectangle("Rectangle_1", 4,4 , 20 , 10);
 //        shapes[3] = new Square("Square_3", 11,12, 8 , 8);
 //        shapes[4] = new Square("Square_4", 11,-2, 4 , 4);
@@ -95,9 +95,9 @@ public class ShapeDisplay {
                 + calcAllPerim
                 + "\n Matrix Area: "
                 + calcAllCollidArea);
-
+        System.out.println("-------");
         new Matrix().displayMatrix(shapes);
 
-        System.out.println();
+
     }
 }
