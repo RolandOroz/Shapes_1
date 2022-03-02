@@ -30,7 +30,7 @@ public class ShapeDisplay {
 
         ShapeBase[] shapes = new ShapeBase[2];
         //not a correct Rectangle
-        shapes[0] = new Square("Square_1", 1, 1, 3 , 3);
+        shapes[0] = new Square("Square_1", -1, -1, 3 , 3);
         shapes[1] = new Square("Square_2", 5, 5, 2 , 2);
 //        shapes[2] = new Rectangle("Rectangle_1", 4,4 , 20 , 10);
 //        shapes[3] = new Square("Square_3", 11,12, 8 , 8);
