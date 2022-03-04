@@ -15,6 +15,7 @@ public class ShapeUtility {
   // TODO change!!!!!!!!!
   public static double calculateAllShapesAreas(ShapeBase[] shapes) {
 
+
     double sumAllShapesArea = 0;
     for (int i = 0; i < shapes.length; i++) {
 
