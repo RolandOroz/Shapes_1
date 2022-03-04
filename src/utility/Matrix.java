@@ -122,8 +122,8 @@ public class Matrix {
   return area;
   }
 
-  public int calculateShapePerimeter() {
-    int perimeter = 0;
+  public int countMatrix() {
+    int count = 0;
 
     for (int k = 0; k < this.shapeMatrix.length; k++) {
 
@@ -131,33 +131,25 @@ public class Matrix {
 
         int value = this.shapeMatrix[k][l];
 
-        if(value == 1) {
-
-          int x = k;
-          int y = l;
-          int x1 = x - 1;
-          int y1 = y;
-          int x2 = x - 1;
-          int y2 = y - 1;
-          int x3 = x + 1;
-          int y3 = y;
-          int x4 = x + 1;
-          int y4 = y + 1;
-
-          if (x > 0 || x <= this.shapeMatrix.length
-            || y > 0 || y <= this.shapeMatrix[k].length) {
-
-            value = this.shapeMatrix[x][y];
-
-              if(value == 1){
-              perimeter++;
-              }
-
-          }
+        //Top
+        if (k > 0 && this.shapeMatrix[k - 1][l] == 1) {
+          count++;
+        }
+        //Left
+        if (l > 0 && this.shapeMatrix[k][l - 1] == 1) {
+          count++;
+        }
+        //Bottom
+        if (k < k - 1 && this.shapeMatrix[k + 1][l] == 1) {
+          count++;
+        }
+        //Right
+        if (l < l - 1 && this.shapeMatrix[k][l + 1] == 1) {
+          count++;
         }
       }
     }
-    return perimeter;
+    return count;
   }
 }
 
