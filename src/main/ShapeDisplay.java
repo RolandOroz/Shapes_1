@@ -100,9 +100,9 @@ public class ShapeDisplay {
         System.out.println("-------");
 
         int matArea = new Matrix(Arrays.asList(shapes)).calculateShapeArea();
-        int matPerim = new Matrix(Arrays.asList(shapes)).countMatrix();
-        System.out.println(matArea);
-        System.out.println(matPerim);
+        int matPerim = new Matrix(Arrays.asList(shapes)).calculateShapePerimeter();
+        System.out.println("Union Area of n Shapes is is: " + matArea);
+        System.out.println("Union Perimeter of n Shapes is is: " + matPerim);
 
     }
 }

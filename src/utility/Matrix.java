@@ -2,10 +2,7 @@ package utility;
 
 import base.ShapeBase;
 
-import java.awt.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -122,34 +119,33 @@ public class Matrix {
   return area;
   }
 
-  public int countMatrix() {
-    int count = 0;
-
+  public int calculateShapePerimeter() {
+    int perimeter = 0;
     for (int k = 0; k < this.shapeMatrix.length; k++) {
-
       for (int l = 0; l < this.shapeMatrix[k].length; l++) {
 
-        int value = this.shapeMatrix[k][l];
-
-        //Top
-        if (k > 0 && this.shapeMatrix[k - 1][l] == 1) {
-          count++;
-        }
-        //Left
-        if (l > 0 && this.shapeMatrix[k][l - 1] == 1) {
-          count++;
-        }
-        //Bottom
-        if (k < k - 1 && this.shapeMatrix[k + 1][l] == 1) {
-          count++;
-        }
-        //Right
-        if (l < l - 1 && this.shapeMatrix[k][l + 1] == 1) {
-          count++;
+        if (this.shapeMatrix[k][l] == 1) {
+          perimeter += 4;
+//        //Top
+//        if (k > 0 && this.shapeMatrix[k - 1][l] == 1) {
+//          count++;
+//        }
+//        //Left
+//        if (l > 0 && this.shapeMatrix[k][l - 1] == 1) {
+//          count++;
+//        }
+          //Bottom
+          if (k < this.shapeMatrix.length - 1) {
+            perimeter -= 2 * this.shapeMatrix[k + 1][l];
+          }
+          //Right
+          if (l < shapeMatrix[k].length - 1) {
+            perimeter -= 2 * this.shapeMatrix[k][l + 1];
+          }
         }
       }
     }
-    return count;
+    return perimeter;
   }
 }
 
