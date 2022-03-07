@@ -59,8 +59,8 @@ public class Matrix {
     //Declare new collection for shapes called tmpShapes
     List<ShapeBase> tmpShapes = new ArrayList<>();
     //Declare int variables diffX and diffY and set values as absolute values of minX in minY
-    int diffX = Math.abs(minX);
-    int diffY = Math.abs(minY);
+    int diffX = minX * -1;
+    int diffY = minY * -1;
 
 //    add diffX and diffY values to maxX and maxY
     maxX = Math.abs(maxX - minX);
